@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 let title = response[i].title;
                 products.innerHTML += `
             <div class="product">
-                <img src="${response[i].images[0]}" alt="${
-                response[i].category.name
+                <img src="${response[i].image}" alt="${
+                response[i].category
                 }" class="product-img">
                 <div class="product-content">
                     <h2 class="product-title">${
                         title.length > 18 ? title.substring(0, 18).concat(' ...') : title
                     }</h2>
+            
                     <p class="product-description">${
                         description.length > 80
                         ? description.substring(0, 80).concat(' ...more')
@@ -35,6 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(err);
         }
     }
-    fetchProducts('https://api.escuelajs.co/api/v1/products');
+    fetchProducts('https://fakestoreapi.com/products');
 });
 
